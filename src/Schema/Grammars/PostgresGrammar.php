@@ -52,6 +52,16 @@ class PostgresGrammar extends \Illuminate\Database\Schema\Grammars\PostgresGramm
     }
 
     /**
+     * Create the column definition for a timestamp with timezone
+     *
+     * @param Fluent $column
+     * @return string
+     */
+    protected function typeTimestampz(Fluent $column) {
+        return "timestamp(0) with time zone";
+    }
+
+    /**
      * @param mixed $value
      * @return mixed|string
      */
